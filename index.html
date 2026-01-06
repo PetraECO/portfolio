@@ -16,7 +16,7 @@
         
         body {
             font-family: 'Jost', sans-serif;
-            background: #0a0118;
+            background: #1a1d29;
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
@@ -32,9 +32,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(107, 61, 143, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(43, 28, 80, 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(74, 44, 109, 0.3) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 106, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(64, 72, 92, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(180, 142, 142, 0.12) 0%, transparent 50%);
             animation: pulse 8s ease-in-out infinite;
             z-index: 0;
         }
@@ -75,11 +75,11 @@
             font-size: clamp(3em, 10vw, 5em);
             margin-bottom: 15px;
             font-weight: 900;
-            background: linear-gradient(135deg, #fff 0%, #e0b3ff 100%);
+            background: linear-gradient(135deg, #f5f5f5 0%, #d4a5a5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 40px rgba(224, 179, 255, 0.3);
+            text-shadow: 0 0 40px rgba(212, 165, 165, 0.2);
         }
         
         header p {
@@ -127,15 +127,15 @@
         
         .stat:hover {
             transform: translateY(-5px);
-            border-color: rgba(224, 179, 255, 0.5);
-            box-shadow: 0 10px 30px rgba(107, 61, 143, 0.4);
+            border-color: rgba(212, 165, 165, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 92, 106, 0.3);
         }
         
         .stat-number {
             font-size: clamp(2.5em, 6vw, 3em);
             font-weight: 700;
             display: block;
-            background: linear-gradient(135deg, #fff 0%, #e0b3ff 100%);
+            background: linear-gradient(135deg, #f5f5f5 0%, #d4a5a5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -190,12 +190,12 @@
         
         .project:hover {
             transform: translateY(-10px);
-            border-color: rgba(224, 179, 255, 0.4);
-            box-shadow: 0 20px 60px rgba(107, 61, 143, 0.5);
+            border-color: rgba(212, 165, 165, 0.4);
+            box-shadow: 0 20px 60px rgba(139, 92, 106, 0.4);
         }
         
         .project-header {
-            background: linear-gradient(135deg, rgba(43, 28, 80, 0.8) 0%, rgba(107, 61, 143, 0.6) 100%);
+            background: linear-gradient(135deg, rgba(44, 50, 66, 0.95) 0%, rgba(64, 72, 92, 0.9) 100%);
             color: white;
             padding: 30px;
             position: relative;
@@ -236,7 +236,7 @@
         }
         
         .project-url:hover {
-            color: #e0b3ff;
+            color: #d4a5a5;
             transform: translateX(5px);
         }
         
@@ -271,19 +271,19 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             padding: 15px;
             border-radius: 12px;
-            border-left: 3px solid #2b1c50;
+            border-left: 3px solid #40485c;
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         
         .feature:hover {
             transform: translateX(5px);
-            box-shadow: 0 5px 20px rgba(43, 28, 80, 0.15);
+            box-shadow: 0 5px 20px rgba(64, 72, 92, 0.15);
         }
         
         .feature-title {
             font-weight: 600;
-            color: #2b1c50;
+            color: #2c3242;
             margin-bottom: 8px;
             font-size: 1.15em;
         }
@@ -302,19 +302,20 @@
         }
         
         .tag {
-            background: linear-gradient(135deg, #2b1c50 0%, #4a2c6d 100%);
+            background: linear-gradient(135deg, #40485c 0%, #5a6278 100%);
             color: white;
             padding: 8px 16px;
             border-radius: 25px;
             font-size: 0.8em;
             font-weight: 500;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(43, 28, 80, 0.3);
+            box-shadow: 0 4px 15px rgba(64, 72, 92, 0.3);
         }
         
         .tag:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(107, 61, 143, 0.5);
+            box-shadow: 0 6px 20px rgba(139, 92, 106, 0.4);
+            background: linear-gradient(135deg, #5a6278 0%, #6d7690 100%);
         }
         
         .cta {
@@ -337,7 +338,7 @@
             left: 50%;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(224, 179, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212, 165, 165, 0.08) 0%, transparent 70%);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             animation: pulse 4s ease-in-out infinite;
@@ -349,7 +350,7 @@
             margin-bottom: 25px;
             font-weight: 700;
             position: relative;
-            background: linear-gradient(135deg, #fff 0%, #e0b3ff 100%);
+            background: linear-gradient(135deg, #f5f5f5 0%, #d4a5a5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -362,7 +363,7 @@
         }
         
         .contact-info a {
-            color: #e0b3ff;
+            color: #d4a5a5;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -376,7 +377,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #e0b3ff;
+            background: #d4a5a5;
             transition: width 0.3s ease;
         }
         
@@ -683,8 +684,8 @@
         <div class="cta">
             <h2>Let's Work Together</h2>
             <p class="contact-info">Ready to bring your vision to life with professional web design?</p>
-            <p class="contact-info" style="margin-top: 25px; font-weight: 600;">Contact: Petra Cutri</p>
-            <p class="contact-info" style="margin-top: 12px;"><a href="http://www.petracutri.com">www.petracutri.com</a></p>
+            <p class="contact-info" style="margin-top: 25px; font-weight: 600;">Contact:(562)383-8481</p>
+            <p class="contact-info" style="margin-top: 12px;"><a href="http://www.petracutri.com">hi@petracutri.com</a></p>
         </div>
     </div>
 </body>
