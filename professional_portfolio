@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petra Cutri - Web Design Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2b1c50 0%, #1a0f2e 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: rgba(255,255,255,0.2);
+            padding: 20px 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .project {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #2b1c50 0%, #1a0f2e 100%);
+            color: white;
+            padding: 30px;
+        }
+        
+        .project-header h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .project-url {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .project-url:hover {
+            text-decoration: underline;
+        }
+        
+        .project-content {
+            padding: 30px;
+        }
+        
+        .project-description {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2b1c50;
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            color: #2b1c50;
+            margin-bottom: 5px;
+        }
+        
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background: #2b1c50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .cta {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .cta h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2b1c50;
+        }
+        
+        .contact-info {
+            font-size: 1.2em;
+            color: #555;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .project {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Petra Cutri</h1>
+            <p>Professional Web Design Portfolio</p>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Live Websites</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Industries</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="project">
+            <div class="project-header">
+                <h2>National Home Assurance</h2>
+                <a href="https://nationalhomeassurance.com/" target="_blank" class="project-url">nationalhomeassurance.com →</a>
+            </div>
+            <div class="project-content">
+                <p class="project-description">
+                    A sophisticated home warranty website with emotional, family-focused messaging designed to build trust and convert visitors into customers. Features modern design with comprehensive service coverage and multiple conversion points.
+                </p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-title">Brand Messaging</div>
+                        Family-focused content emphasizing peace of mind and home protection
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Lead Generation</div>
+                        Multiple quote forms strategically placed throughout the site
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Trust Building</div>
+                        Customer statistics, guarantees, and transparent coverage details
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Professional Design</div>
+                        Modern gradient aesthetics with intuitive navigation
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Home Warranty</span>
+                    <span class="tag">Lead Generation</span>
+                    <span class="tag">WordPress</span>
+                    <span class="tag">Responsive Design</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <h2>National Home Services USA</h2>
+                <a href="https://nationalhomeservicesusa.com/" target="_blank" class="project-url">nationalhomeservicesusa.com →</a>
+            </div>
+            <div class="project-content">
+                <p class="project-description">
+                    Clean, professional home warranty website with detailed coverage information and strong calls-to-action. Organized service sections make it easy for visitors to understand coverage options.
+                </p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-title">Service Categories</div>
+                        Clear sections: Heating/Cooling, Electrical, Plumbing, Appliances, Electronics
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Lead Capture</div>
+                        Contact forms with consent management for compliance
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Professional Branding</div>
+                        Cohesive visual identity with branded logo and color scheme
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Mobile Optimized</div>
+                        Fully responsive design for all devices
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Home Services</span>
+                    <span class="tag">WordPress</span>
+                    <span class="tag">Contact Forms</span>
+                    <span class="tag">SEO Optimized</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <h2>Little Angels Daycare</h2>
+                <a href="https://www.littleangelsdaycarersm.com/" target="_blank" class="project-url">littleangelsdaycarersm.com →</a>
+            </div>
+            <div class="project-content">
+                <p class="project-description">
+                    Vibrant, engaging daycare website with creative copywriting and emotional appeal. Features age-specific programs, bilingual education offerings, and a warm personality that connects with parents seeking quality childcare.
+                </p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-title">Creative Content</div>
+                        Engaging, poetic messaging that captures attention and builds trust
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Program Highlights</div>
+                        Art, Spanish, and Music classes with detailed descriptions
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Personal Story</div>
+                        Owner bio showcasing 17 years of parenting experience
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Social Proof</div>
+                        5-star testimonials and social media integration
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Childcare</span>
+                    <span class="tag">Bilingual Programs</span>
+                    <span class="tag">WordPress</span>
+                    <span class="tag">Booking System</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <h2>Estela's Playhouse</h2>
+                <a href="https://estelasplayhouse.com/" target="_blank" class="project-url">estelasplayhouse.com →</a>
+            </div>
+            <div class="project-content">
+                <p class="project-description">
+                    Warm, welcoming bilingual daycare website designed to help parents feel confident in their childcare choice. Features age-specific program information, photo galleries, and integrated booking system.
+                </p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-title">Age-Specific Programs</div>
+                        Clear sections for Infants, Toddlers, and Preschool Age children
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Visual Storytelling</div>
+                        Photo gallery showcasing the facility and activities
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Booking Integration</div>
+                        Integrated scheduling system for tours and enrollment
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Trust Elements</div>
+                        Owner bio, testimonials, and licensing information
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Childcare</span>
+                    <span class="tag">Bilingual</span>
+                    <span class="tag">WordPress</span>
+                    <span class="tag">Photo Gallery</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <h2>Borges Construction</h2>
+                <a href="http://borgesconstruction.com/" target="_blank" class="project-url">borgesconstruction.com →</a>
+            </div>
+            <div class="project-content">
+                <p class="project-description">
+                    Straightforward, functional website for a Raleigh-based construction and remodeling company. Emphasizes the company's expertise and wide range of services with clear, easy-to-scan information.
+                </p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-title">Service Listings</div>
+                        Comprehensive list of construction and remodeling services
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Mission Statement</div>
+                        Clear communication of company values and commitment
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Easy Navigation</div>
+                        Simple structure for quick access to information
+                    </div>
+                    <div class="feature">
+                        <div class="feature-title">Contact Information</div>
+                        Prominent display of phone, email, and address
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Construction</span>
+                    <span class="tag">Remodeling</span>
+                    <span class="tag">Professional Services</span>
+                    <span class="tag">Local Business</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Let's Work Together</h2>
+            <p class="contact-info">Ready to bring your vision to life with professional web design?</p>
+            <p class="contact-info" style="margin-top: 20px; font-weight: bold;">Contact: Petra Cutri</p>
+            <p class="contact-info" style="margin-top: 10px;"><a href="http://www.petracutri.com" style="color: #2b1c50; text-decoration: none;">www.petracutri.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
