@@ -45,7 +45,7 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 40px 20px;
             position: relative;
@@ -147,15 +147,23 @@
             font-weight: 300;
         }
         
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
         .project {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 25px;
             overflow: hidden;
-            margin-bottom: 50px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             transition: all 0.5s ease;
             animation: fadeInUp 0.8s ease-out backwards;
+            display: flex;
+            flex-direction: column;
         }
         
         .project:nth-child(1) { animation-delay: 0.1s; }
@@ -164,6 +172,10 @@
         .project:nth-child(4) { animation-delay: 0.4s; }
         .project:nth-child(5) { animation-delay: 0.5s; }
         .project:nth-child(6) { animation-delay: 0.6s; }
+        
+        .project.featured {
+            grid-column: span 2;
+        }
         
         @keyframes fadeInUp {
             from {
@@ -177,7 +189,7 @@
         }
         
         .project:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-10px);
             border-color: rgba(224, 179, 255, 0.4);
             box-shadow: 0 20px 60px rgba(107, 61, 143, 0.5);
         }
@@ -185,7 +197,7 @@
         .project-header {
             background: linear-gradient(135deg, rgba(43, 28, 80, 0.8) 0%, rgba(107, 61, 143, 0.6) 100%);
             color: white;
-            padding: clamp(25px, 5vw, 40px);
+            padding: 30px;
             position: relative;
             overflow: hidden;
         }
@@ -204,7 +216,7 @@
         
         .project-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8em, 4.5vw, 2.5em);
+            font-size: clamp(1.5em, 3vw, 2em);
             margin-bottom: 12px;
             font-weight: 700;
             position: relative;
@@ -214,7 +226,7 @@
         .project-url {
             color: rgba(255,255,255,0.85);
             text-decoration: none;
-            font-size: clamp(0.95em, 2.5vw, 1.15em);
+            font-size: clamp(0.9em, 2vw, 1em);
             display: inline-block;
             margin-top: 8px;
             font-weight: 400;
@@ -229,65 +241,72 @@
         }
         
         .project-content {
-            padding: clamp(25px, 5vw, 40px);
+            padding: 25px;
             background: rgba(255, 255, 255, 0.98);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-description {
-            font-size: clamp(1.05em, 2.5vw, 1.15em);
-            margin-bottom: 25px;
+            font-size: 1em;
+            margin-bottom: 20px;
             color: #444;
-            line-height: 1.8;
+            line-height: 1.7;
+            flex: 1;
         }
         
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 18px;
-            margin-top: 25px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .featured .features {
+            grid-template-columns: repeat(4, 1fr);
         }
         
         .feature {
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 22px;
-            border-radius: 15px;
-            border-left: 4px solid #2b1c50;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 3px solid #2b1c50;
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         
         .feature:hover {
-            transform: translateX(8px);
+            transform: translateX(5px);
             box-shadow: 0 5px 20px rgba(43, 28, 80, 0.15);
-            border-left-width: 6px;
         }
         
         .feature-title {
             font-weight: 600;
             color: #2b1c50;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+            margin-bottom: 8px;
+            font-size: 0.95em;
         }
         
         .feature-text {
-            font-size: 0.95em;
+            font-size: 0.85em;
             color: #666;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         
         .tags {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 20px;
         }
         
         .tag {
             background: linear-gradient(135deg, #2b1c50 0%, #4a2c6d 100%);
             color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 0.9em;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.8em;
             font-weight: 500;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(43, 28, 80, 0.3);
@@ -365,6 +384,20 @@
             width: 100%;
         }
         
+        @media (max-width: 1200px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+            
+            .project.featured {
+                grid-column: span 1;
+            }
+            
+            .featured .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 20px 15px;
@@ -383,12 +416,17 @@
                 min-width: 140px;
             }
             
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
             .features {
                 grid-template-columns: 1fr;
             }
             
-            .project {
-                margin-bottom: 35px;
+            .featured .features {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -428,219 +466,216 @@
             </div>
         </header>
 
-        <div class="project">
-            <div class="project-header">
-                <h2>National Home Assurance</h2>
-                <a href="https://nationalhomeassurance.com/" target="_blank" class="project-url">nationalhomeassurance.com →</a>
-            </div>
-            <div class="project-content">
-                <p class="project-description">
-                    A sophisticated home warranty website with emotional, family-focused messaging designed to build trust and convert visitors into customers. Features modern design with comprehensive service coverage and multiple conversion points.
-                </p>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-title">Brand Messaging</div>
-                        <div class="feature-text">Family-focused content emphasizing peace of mind and home protection</div>
+        <div class="projects-grid">
+            <div class="project featured">
+                <div class="project-header">
+                    <h2>National Home Assurance</h2>
+                    <a href="https://nationalhomeassurance.com/" target="_blank" class="project-url">nationalhomeassurance.com →</a>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        A sophisticated home warranty website with emotional, family-focused messaging designed to build trust and convert visitors into customers. Features modern design with comprehensive service coverage and multiple conversion points.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-title">Brand Messaging</div>
+                            <div class="feature-text">Family-focused content emphasizing peace of mind</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Lead Generation</div>
+                            <div class="feature-text">Multiple quote forms strategically placed</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Trust Building</div>
+                            <div class="feature-text">Customer statistics and guarantees</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Professional Design</div>
+                            <div class="feature-text">Modern gradient aesthetics</div>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <div class="feature-title">Lead Generation</div>
-                        <div class="feature-text">Multiple quote forms strategically placed throughout the site</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Trust Building</div>
-                        <div class="feature-text">Customer statistics, guarantees, and transparent coverage details</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Professional Design</div>
-                        <div class="feature-text">Modern gradient aesthetics with intuitive navigation</div>
+                    <div class="tags">
+                        <span class="tag">Home Warranty</span>
+                        <span class="tag">Lead Generation</span>
+                        <span class="tag">WordPress</span>
+                        <span class="tag">Responsive</span>
                     </div>
                 </div>
-                <div class="tags">
-                    <span class="tag">Home Warranty</span>
-                    <span class="tag">Lead Generation</span>
-                    <span class="tag">WordPress</span>
-                    <span class="tag">Responsive Design</span>
-                </div>
             </div>
-        </div>
 
-        <div class="project">
-            <div class="project-header">
-                <h2>Free Sites for Good</h2>
-                <a href="https://freesitesforgood.com/" target="_blank" class="project-url">freesitesforgood.com →</a>
-            </div>
-            <div class="project-content">
-                <p class="project-description">
-                    Mission-driven platform offering free, professionally designed websites to nonprofits. Features comprehensive service packages, pricing tiers, and an application system. Combines compelling storytelling with clear value propositions to attract nonprofit organizations.
-                </p>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-title">Mission Storytelling</div>
-                        <div class="feature-text">Personal founder story and mission-focused messaging that resonates with nonprofits</div>
+            <div class="project">
+                <div class="project-header">
+                    <h2>Free Sites for Good</h2>
+                    <a href="https://freesitesforgood.com/" target="_blank" class="project-url">freesitesforgood.com →</a>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Mission-driven platform offering free, professionally designed websites to nonprofits. Combines compelling storytelling with clear value propositions.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-title">Mission Storytelling</div>
+                            <div class="feature-text">Personal founder narrative</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Service Packages</div>
+                            <div class="feature-text">Clear pricing tiers</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Application System</div>
+                            <div class="feature-text">Qualification forms</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Value Proposition</div>
+                            <div class="feature-text">No upfront costs</div>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <div class="feature-title">Service Packages</div>
-                        <div class="feature-text">Clear pricing tiers from free starter to growth plans with detailed feature breakdowns</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Application System</div>
-                        <div class="feature-text">Comprehensive form for nonprofit qualification and needs assessment</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Value Proposition</div>
-                        <div class="feature-text">Strategic messaging emphasizing no upfront costs and conversion-focused design</div>
+                    <div class="tags">
+                        <span class="tag">Social Impact</span>
+                        <span class="tag">WordPress</span>
+                        <span class="tag">SaaS</span>
+                        <span class="tag">Nonprofit</span>
                     </div>
                 </div>
-                <div class="tags">
-                    <span class="tag">Social Impact</span>
-                    <span class="tag">WordPress</span>
-                    <span class="tag">SaaS Platform</span>
-                    <span class="tag">Lead Generation</span>
-                    <span class="tag">Nonprofit Services</span>
-                </div>
             </div>
-        </div>
 
-        <div class="project">
-            <div class="project-header">
-                <h2>Borgues Construction</h2>
-                <a href="https://www.borguesconstruction.com/" target="_blank" class="project-url">borguesconstruction.com →</a>
-            </div>
-            <div class="project-content">
-                <p class="project-description">
-                    Professional, modern website for a family-owned general contractor specializing in residential and light commercial projects. Features comprehensive service showcases, project galleries, and integrated contact forms for seamless lead generation.
-                </p>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-title">Service Showcases</div>
-                        <div class="feature-text">Detailed pages for kitchen remodels, bathroom renovations, flooring, carpentry, and more</div>
+            <div class="project">
+                <div class="project-header">
+                    <h2>Borgues Construction</h2>
+                    <a href="https://www.borguesconstruction.com/" target="_blank" class="project-url">borguesconstruction.com →</a>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Professional website for a family-owned general contractor. Features comprehensive service showcases and integrated contact forms.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-title">Service Showcases</div>
+                            <div class="feature-text">Kitchen, bathroom, flooring</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Brand Identity</div>
+                            <div class="feature-text">"Build Like It's Our Own"</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Lead Capture</div>
+                            <div class="feature-text">Multiple contact forms</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Trust Elements</div>
+                            <div class="feature-text">FAQ and licensing info</div>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <div class="feature-title">Brand Identity</div>
-                        <div class="feature-text">"We Build Like It's Our Own" messaging that emphasizes family values and quality</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Lead Capture</div>
-                        <div class="feature-text">Multiple contact forms and quote request systems throughout the site</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Trust Elements</div>
-                        <div class="feature-text">FAQ section, licensing info, and transparent communication about process</div>
+                    <div class="tags">
+                        <span class="tag">Construction</span>
+                        <span class="tag">WordPress</span>
+                        <span class="tag">Professional</span>
                     </div>
                 </div>
-                <div class="tags">
-                    <span class="tag">Construction</span>
-                    <span class="tag">WordPress</span>
-                    <span class="tag">Professional Services</span>
-                    <span class="tag">Project Gallery</span>
-                </div>
             </div>
-        </div>
 
-        <div class="project">
-            <div class="project-header">
-                <h2>National Home Services USA</h2>
-                <a href="https://nationalhomeservicesusa.com/" target="_blank" class="project-url">nationalhomeservicesusa.com →</a>
-            </div>
-            <div class="project-content">
-                <p class="project-description">
-                    Clean, professional home warranty website with detailed coverage information and strong calls-to-action. Organized service sections make it easy for visitors to understand coverage options.
-                </p>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-title">Service Categories</div>
-                        <div class="feature-text">Clear sections: Heating/Cooling, Electrical, Plumbing, Appliances, Electronics</div>
+            <div class="project">
+                <div class="project-header">
+                    <h2>National Home Services USA</h2>
+                    <a href="https://nationalhomeservicesusa.com/" target="_blank" class="project-url">nationalhomeservicesusa.com →</a>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Clean, professional home warranty website with detailed coverage information and organized service sections.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-title">Service Categories</div>
+                            <div class="feature-text">HVAC, Electrical, Plumbing</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Lead Capture</div>
+                            <div class="feature-text">Compliance forms</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Branding</div>
+                            <div class="feature-text">Cohesive visual identity</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Mobile Optimized</div>
+                            <div class="feature-text">Fully responsive</div>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <div class="feature-title">Lead Capture</div>
-                        <div class="feature-text">Contact forms with consent management for compliance</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Professional Branding</div>
-                        <div class="feature-text">Cohesive visual identity with branded logo and color scheme</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Mobile Optimized</div>
-                        <div class="feature-text">Fully responsive design for all devices</div>
+                    <div class="tags">
+                        <span class="tag">Home Services</span>
+                        <span class="tag">WordPress</span>
+                        <span class="tag">SEO</span>
                     </div>
                 </div>
-                <div class="tags">
-                    <span class="tag">Home Services</span>
-                    <span class="tag">WordPress</span>
-                    <span class="tag">Contact Forms</span>
-                    <span class="tag">SEO Optimized</span>
-                </div>
             </div>
-        </div>
 
-        <div class="project">
-            <div class="project-header">
-                <h2>Estela's Playhouse</h2>
-                <a href="https://estelasplayhouse.com/" target="_blank" class="project-url">estelasplayhouse.com →</a>
-            </div>
-            <div class="project-content">
-                <p class="project-description">
-                    Warm, welcoming bilingual daycare website designed to help parents feel confident in their childcare choice. Features age-specific program information, photo galleries, and integrated booking system.
-                </p>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-title">Age-Specific Programs</div>
-                        <div class="feature-text">Clear sections for Infants, Toddlers, and Preschool Age children</div>
+            <div class="project">
+                <div class="project-header">
+                    <h2>Estela's Playhouse</h2>
+                    <a href="https://estelasplayhouse.com/" target="_blank" class="project-url">estelasplayhouse.com →</a>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Warm, welcoming bilingual daycare website with age-specific programs and integrated booking system.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-title">Age Programs</div>
+                            <div class="feature-text">Infants to Preschool</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Visual Story</div>
+                            <div class="feature-text">Photo galleries</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Booking</div>
+                            <div class="feature-text">Tour scheduling</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Trust Elements</div>
+                            <div class="feature-text">Testimonials & licensing</div>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <div class="feature-title">Visual Storytelling</div>
-                        <div class="feature-text">Photo gallery showcasing the facility and activities</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Booking Integration</div>
-                        <div class="feature-text">Integrated scheduling system for tours and enrollment</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Trust Elements</div>
-                        <div class="feature-text">Owner bio, testimonials, and licensing information</div>
+                    <div class="tags">
+                        <span class="tag">Childcare</span>
+                        <span class="tag">Bilingual</span>
+                        <span class="tag">WordPress</span>
                     </div>
                 </div>
-                <div class="tags">
-                    <span class="tag">Childcare</span>
-                    <span class="tag">Bilingual</span>
-                    <span class="tag">WordPress</span>
-                    <span class="tag">Photo Gallery</span>
-                </div>
             </div>
-        </div>
 
-        <div class="project">
-            <div class="project-header">
-                <h2>Little Angels Daycare</h2>
-                <a href="https://www.littleangelsdaycarersm.com/" target="_blank" class="project-url">littleangelsdaycarersm.com →</a>
-            </div>
-            <div class="project-content">
-                <p class="project-description">
-                    Vibrant, engaging daycare website with creative copywriting and emotional appeal. Features age-specific programs, bilingual education offerings, and a warm personality that connects with parents seeking quality childcare.
-                </p>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-title">Creative Content</div>
-                        <div class="feature-text">Engaging, poetic messaging that captures attention and builds trust</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Program Highlights</div>
-                        <div class="feature-text">Art, Spanish, and Music classes with detailed descriptions</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Personal Story</div>
-                        <div class="feature-text">Owner bio showcasing 17 years of parenting experience</div>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-title">Social Proof</div>
-                        <div class="feature-text">5-star testimonials and social media integration</div>
-                    </div>
+            <div class="project">
+                <div class="project-header">
+                    <h2>Little Angels Daycare</h2>
+                    <a href="https://www.littleangelsdaycarersm.com/" target="_blank" class="project-url">littleangelsdaycarersm.com →</a>
                 </div>
-                <div class="tags">
-                    <span class="tag">Childcare</span>
-                    <span class="tag">Bilingual Programs</span>
-                    <span class="tag">WordPress</span>
-                    <span class="tag">Booking System</span>
+                <div class="project-content">
+                    <p class="project-description">
+                        Vibrant, engaging daycare website with creative copywriting and bilingual education offerings.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-title">Creative Content</div>
+                            <div class="feature-text">Poetic messaging</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Programs</div>
+                            <div class="feature-text">Art, Spanish, Music</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Personal Story</div>
+                            <div class="feature-text">17 years experience</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-title">Social Proof</div>
+                            <div class="feature-text">5-star testimonials</div>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Childcare</span>
+                        <span class="tag">Bilingual</span>
+                        <span class="tag">WordPress</span>
+                    </div>
                 </div>
             </div>
         </div>
